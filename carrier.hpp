@@ -22,7 +22,7 @@ private:
 
 public:
 	Carrier();
-	void add_aircraft();
+	void add_aircraft(Aircraft aircraft);
 	unsigned int fill();
 	unsigned int figth();
 	string get_status();

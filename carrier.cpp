@@ -27,7 +27,7 @@ unsigned int Carrier::fill() {
 
 unsigned int Carrier::figth() {
   unsigned int other_carrier_healthpoint;
-  for (int i = 0; i < Aircraft::ammo_level ; i++) {
+  for (unsigned int i = 0; i < Aircraft::ammo_level ; i++) {
     other_carrier_healthpoint -= Aircraft::base_damage;
   }
   return other_carrier_healthpoint;
@@ -35,16 +35,16 @@ unsigned int Carrier::figth() {
 
 string Carrier::get_status() {
   string output = "";
-  output += "Type: " + Aircraft::type + "Ammo Storage: " + ammo_storage + "Total damge: " + Aircraft::damage;
+
   output += "Aircraft:";
-  output += "Type: " + Aircraft::type + "Base damage: " + Aircraft::base_damage + "All damage: " + Aircraft::damage;
+  output += "Type: " + Aircraft::type + "Base damage: " + to_string(Aircraft::base_damage) + "All damage: " + to_string(Aircraft::damage);
   output += get_all_status();
   return output;
 }
 
 string Carrier::get_all_status() {
   string status = "";
-  for (int i = 0; i < aircrafts.size(); i++) {
+  for (unsigned int i = 0; i < aircrafts.size(); i++) {
     status += aircrafts.at(i).get_status() + "\n";
   }
   return status;

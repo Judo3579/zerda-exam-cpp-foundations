@@ -7,9 +7,12 @@
 #include "aircraft.hpp"
 using namespace std;
 
+unsigned int Aircraft::TYPE_NAME = 0;
+
 Aircraft::Aircraft() {
   this->ammo_level = 0;
-  this->type = type;
+  this->type = Aircraft::TYPE_NAME;
+  TYPE_NAME++;
   this->damage = damage;
   this->base_damage = base_damage;
   this->ammo = 0;
@@ -29,8 +32,8 @@ string Aircraft::get_type() {
   return "Type: " + type;
 }
 
-string Aircraft::get_status(const *char) {
-  return "Type: " + type + ", Ammo: " + ammo_level + ", Base damage: " + base_damage + ", All damage: " + damage;
+string Aircraft::get_status() {
+  return "Type: " + type + ", Ammo: " + to_string(ammo_level) + ", Base damage: " + to_string(base_damage) + ", All damage: " + to_string(damage);
 }
 
 Aircraft::~Aircraft() {

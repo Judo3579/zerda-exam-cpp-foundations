@@ -8,7 +8,7 @@
 #include "F35.hpp"
 
 F35::F35() {
-  type = F35;
+  type = "F35";
   ammo_level = 12;
   base_damage = 50;
 }

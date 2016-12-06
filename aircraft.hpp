@@ -8,25 +8,24 @@
 #ifndef AIRCRAFT_HPP_
 #define AIRCRAFT_HPP_
 
+#include <iostream>
 #include <string>
 
 class Aircraft {
-private:
-  unsigned int damage;
-
-protected:
-  unsigned int type;
-  unsigned int ammo_level;
-  unsigned int ammo;
-  unsigned int base_damage;
-
 public:
-	Aircraft();
-	int fight(int ammo, int damage);
-	const unsigned int refill();
-	std::string get_type();
-	std::string get_status();
-	~Aircraft();
+  static unsigned int TYPE_NAME;
+  static unsigned int damage;
+  static unsigned int ammo;
+  static std::string type;
+  static unsigned int ammo_level;
+  static unsigned int base_damage;
+
+  Aircraft();
+  int fight(int ammo, int damage);
+  const unsigned int refill();
+  std::string get_type();
+  std::string get_status();
+  ~Aircraft();
 };
 
 
